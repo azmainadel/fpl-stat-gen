@@ -17,7 +17,7 @@ LEAGUE_CLASSIC_STANDING_SUBURL = "leagues-classic/"
 LEAGUE_H2H_STANDING_SUBURL = "leagues-h2h/"
 TEAM_ENTRY_SUBURL = "entry/"
 PLAYERS_INFO_SUBURL = "bootstrap-static/"
-PLAYERS_INFO_FILENAME = "Output/allPlayersInfo.json"
+PLAYERS_INFO_FILENAME = "2020-21/allPlayersInfo.json"
 
 USER_SUMMARY_URL = FPL_URL + USER_SUMMARY_SUBURL
 PLAYERS_INFO_URL = FPL_URL + PLAYERS_INFO_SUBURL
@@ -103,7 +103,7 @@ def getAllPlayersDetailedJson():
 
 # Write info to CSV
 def writeToFile(countOfplayersPicked, fileName):
-    with open(fileName, 'w') as out:
+    with io.open(fileName, "w", encoding="utf-8") as out:
         csv_out = csv.writer(out, delimiter=",")
         csv_out.writerow(['Name', 'Count'])
 
@@ -134,7 +134,7 @@ countOfCaptainsPicked = {}
 totalNumberOfPlayersCount = 0
 pageCount = START_PAGE
 GWNumber = args['gameweek']
-leagueIdSelected = 214841 # League code for Noibeddo FPL
+leagueIdSelected = 33386 # League code for Noibeddo FPL
 
 if args['type'] == "h2h":
     leagueStandingUrl = FPL_URL + LEAGUE_H2H_STANDING_SUBURL
@@ -180,8 +180,8 @@ print("\n")
 listOfcountOfplayersPicked = sorted(
     countOfplayersPicked.items(), key=lambda x: x[1], reverse=True)
 writeToFile(listOfcountOfplayersPicked,
-            "Output/GW"+str(GWNumber)+" Players " + "Noibeddo FPL" + ".csv")
+            "2020-21/GW"+str(GWNumber)+" Players " + "Noibeddo FPL" + ".csv")
 listOfCountOfCaptainsPicked = sorted(
     countOfCaptainsPicked.items(), key=lambda x: x[1], reverse=True)
 writeToFile(listOfCountOfCaptainsPicked,
-            "Output/GW" + str(GWNumber)+" Captains " + "Noibeddo FPL" + ".csv")
+            "2020-21/GW" + str(GWNumber)+" Captains " + "Noibeddo FPL" + ".csv")
