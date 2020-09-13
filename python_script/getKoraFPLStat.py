@@ -8,8 +8,11 @@ import sys
 from tqdm import tqdm
 
 # Replace with your own login email and password for FPL
-LOGIN_EMAIL = 'FPL ID EMAIL' 
-LOGIN_PASSWORD =  'ENTER PASSWORD FOR FIRST TIME USE'
+LOGIN_EMAIL = 'EMAIL_ID' 
+LOGIN_PASSWORD =  'PASSWORD' # Need for authentication for the first time
+
+# Add League ID here
+LEAGUE_ID = 11111 # 11111 demo
 
 FPL_URL = "https://fantasy.premierleague.com/api/"
 LOGIN_URL = "https://users.premierleague.com/accounts/login/"
@@ -135,7 +138,7 @@ countOfCaptainsPicked = {}
 totalNumberOfPlayersCount = 0
 pageCount = START_PAGE
 GWNumber = args['gameweek']
-leagueIdSelected = 33386 # League code for Noibeddo FPL
+leagueIdSelected = LEAGUE_ID # League code
 
 if args['type'] == "h2h":
     leagueStandingUrl = FPL_URL + LEAGUE_H2H_STANDING_SUBURL
