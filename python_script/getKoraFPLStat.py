@@ -1,6 +1,7 @@
 import requests
 import json
 import csv
+import io
 import argparse
 import logging
 import sys
