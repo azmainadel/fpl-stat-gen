@@ -3,11 +3,14 @@
 
 1. Python 3.4. Go to [Download Python 3.4.7](https://www.python.org/downloads/)
 
-2. `requests` library. Run the following on your terminal:
+2. `requests` and `tqdm` library. Run the following on your preferred terminal:
 
 ```
-pip3 install requests
+pip3 install requests tqdm
 ```
+
+3. Set Email, Password and League ID in the **python_script** folder.
+
 
 ## Usage
 
@@ -28,7 +31,7 @@ or
 
 ```python3 python_script/getKoraFPLStat.py -g 2 -t classic```
 
-
+If it does not work use `python` instead of `python3`
 
 ### 2. Get all stats for every GW
 
@@ -55,3 +58,6 @@ Run the command:
 > Please Note:
  **For first time usage, you have to put your password to validate the payload for getting all players' data. Replace the value of `LOGIN_PASSWORD` in getKoraFPLStat.py**
 *(It's not harmful, relax)*
+
+> The outputs here are for Noibeddo FPL league.
+
